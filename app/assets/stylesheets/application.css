@@ -179,8 +179,6 @@ ul {
   }
 }
 
-
-
 /* Aulas e Treinos Exclusivos Section */
 #aulas-treinos {
   display: flex;
@@ -386,8 +384,6 @@ ul {
   font-weight: bold;
 }
 
-
-
 /* Unidades */
 #localizacoes {
   padding: 40px 40px;
@@ -442,8 +438,6 @@ ul {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-
 /* Contact Section */
 .contact {
   padding: 20px 20px;
@@ -483,7 +477,7 @@ ul {
   border: 2px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
-  color: #5e6e593;
+  color: #5e6e59;
   box-sizing: border-box; /* Include padding in width calculation */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
