@@ -34,7 +34,7 @@ ul {
 #header .logo img {
   width: 100px; /* Adjust the width of the logo */
   height: auto;
-  padding: 10px;
+  padding: 15px;
 }
 
 #header nav ul {
@@ -61,7 +61,7 @@ ul {
 .hero {
   position: relative;
   width: calc(100% - 20px); /* Subtract 20px (10px left and 10px right) from the width */
-  height: 650px; /* Adjust the height as needed */
+  height: 600px; /* Adjust the height as needed */
   background-image: url('https://cdn.pixabay.com/photo/2024/03/30/19/29/ai-generated-8665327_1280.png');
   background-size: cover;
   background-position: center; /* Ensure the image is centered */
@@ -77,12 +77,12 @@ ul {
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  max-width: 50%;
+  max-width: 80%;
   z-index: 1;
 }
 
 .hero-content h1 {
-  font-size: 3.5em;
+  font-size: 3em;
   margin-bottom: 20px;
 }
 
@@ -101,7 +101,7 @@ ul {
 
 #servicos h2 {
   font-size: 2em;
-  margin-bottom: 20px; /* Space between the title and the paragraph */
+  margin-bottom: 20px;
   color: #333;
   font-weight: bold;
 }
@@ -143,7 +143,7 @@ ul {
 
 .service-card h3 {
   font-size: 1.4em;
-  color: #3d8b3d;
+  color:#ccf092;
   margin-top: 15px;
 }
 
@@ -159,25 +159,15 @@ ul {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .service-cards {
-    gap: 20px;
-  }
-
-  .service-card {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  #servicos h2 {
-    font-size: 2em;
-  }
-
-  .section-description {
-    font-size: 1.1em;
-  }
+.service-card:hover h3 {
+  color: #ccf092;
 }
+
+.service-card:hover p {
+  color: #ccf092;
+}
+
+
 
 /* Aulas e Treinos Exclusivos Section */
 #aulas-treinos {
@@ -262,8 +252,7 @@ ul {
 }
 
 .class-card:hover h3 {
-  color: #ccf092;
-}
+  color:  #142264}
 
 .class-card:hover p {
   color: #ccf092;
@@ -334,27 +323,35 @@ ul {
 }
 
 .plan-cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+  gap: 30px; /* Space between cards */
+  padding: 0 20px;
+  max-width: 1200px; /* Ensure the overall container does not stretch too wide */
+  margin: 0 auto; /* Center the grid container */
 }
 
 .plan-card {
-  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%; /* Make sure card takes the full space available */
+  box-sizing: border-box; /* Ensures padding doesn't affect width calculation */
 }
 
 .plan-card h3 {
-  text-align: center;
+  text-align: left;
 }
 
 .plan-card ul {
   list-style-type: disc;
   padding-left: 20px;
+  text-align: left;
 }
 
 .cta-btn {
@@ -365,11 +362,42 @@ ul {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: auto;
+  align-self: flex-start;
+  width: 100%; /* Button should take full width */
+}
+
+
+.plan-card .cta-btn {
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 .cta-btn:hover {
   background-color: #ccf092;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1200px) {
+  .plan-cards {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .plan-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .plan-cards {
+    grid-template-columns: 1fr; /* 1 column for very small screens */
+  }
 }
 
 /* Highlight Plano Annual */
@@ -428,7 +456,7 @@ ul {
 }
 
 .location-card p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 15px;
   color:#5e6e59;
 }
@@ -496,7 +524,7 @@ ul {
 
 .contact-form button {
   background-color: #ccf092;
-  color: white;
+  color: #8c8484;
   padding: 15px 30px;
   border: none;
   border-radius: 50px;
@@ -622,4 +650,55 @@ footer {
 
 .social-media a.twitter img {
   filter: invert(39%) sepia(76%) saturate(339%) hue-rotate(176deg) brightness(96%) contrast(94%);
+}
+
+@media (max-width: 480px) {
+  #header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0;
+  }
+
+  .hero {
+    height: auto;
+    padding: 20px 10px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .class-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card, .location-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .service-card {
+    width: 100%;
+  }
+
+  .plan-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-cards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
