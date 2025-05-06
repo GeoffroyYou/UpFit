@@ -32,7 +32,7 @@ ul {
 }
 
 #header .logo img {
-  width: 100px; /* Adjust the width of the logo */
+  width: 110px; /* Adjust the width of the logo */
   height: auto;
   padding: 15px;
 }
@@ -82,12 +82,12 @@ ul {
 }
 
 .hero-content h1 {
-  font-size: 3em;
+  font-size: 3vw;
   margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 1.2em;
+  font-size: 1.2vw;
   margin-bottom: 30px;
 }
 
@@ -102,7 +102,7 @@ ul {
 #servicos h2 {
   font-size: 2em;
   margin-bottom: 20px;
-  color: #333;
+  color: #142264;
   font-weight: bold;
 }
 
@@ -113,7 +113,7 @@ ul {
 #servicos .section-description {
   font-size: 1.2em;
   margin-bottom: 40px;
-  color: #666;
+  color: #142264;
   line-height: 1.6;
 }
 
@@ -137,8 +137,9 @@ ul {
 
 .service-card img {
   max-width: 100%;
-  height: 150px;
   border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 16 /9;
 }
 
 .service-card h3 {
@@ -168,12 +169,11 @@ ul {
 }
 
 
-
 /* Aulas e Treinos Exclusivos Section */
 #aulas-treinos {
   display: flex;
   flex-direction: column;
-  align-items: center;  /* Ensures everything inside is centered */
+  align-items: center;
   padding: 10px;
   background-color: #f4f4f4;
   text-align: center;   /* Ensures text is centered within this section */
@@ -252,7 +252,8 @@ ul {
 }
 
 .class-card:hover h3 {
-  color:  #142264}
+  color:  #142264
+}
 
 .class-card:hover p {
   color: #ccf092;
@@ -332,7 +333,7 @@ ul {
 }
 
 .plan-card {
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: space-between;
   background-color: #fff;
@@ -382,24 +383,6 @@ ul {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 1200px) {
-  .plan-cards {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
-  }
-}
-
-@media (max-width: 900px) {
-  .plan-cards {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
-  }
-}
-
-@media (max-width: 600px) {
-  .plan-cards {
-    grid-template-columns: 1fr; /* 1 column for very small screens */
-  }
-}
-
 /* Highlight Plano Annual */
 .plan-card.highlighted {
   background-color: #e0ffcc;
@@ -445,8 +428,8 @@ ul {
 
 .location-card img {
   width: 100%;
-  height: 250px;
   object-fit: cover;
+  aspect-ratio: 16 / 9;
   border-radius: 10px 10px 0 0;
 }
 
@@ -473,12 +456,15 @@ ul {
   text-align: center;
 }
 
+
+
 .contact h2 {
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 20px; /* Reduced margin for better spacing */
-  color:#5e6e59;
+  color:#142264;
 }
+
 
 .contact p {
   font-size: 1.1rem;
@@ -532,7 +518,7 @@ ul {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 20px;
-  width: 220px; /* Fixed width for button */
+  width: auto; /* Fixed width for button */
   letter-spacing: 1px;
 }
 
@@ -546,7 +532,6 @@ ul {
 .contact-form .form-group {
   width: 100%;
 }
-
 
 
 /* Footer */
@@ -652,10 +637,255 @@ footer {
   filter: invert(39%) sepia(76%) saturate(339%) hue-rotate(176deg) brightness(96%) contrast(94%);
 }
 
+/* General Styling for the Premium Cards Section */
+#planos {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+#planos h2 {
+  font-size: 1.6em;
+  margin-bottom: 30px;
+}
+
+.premium-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Space between the cards */
+  flex-wrap: wrap; /* Wrap to next line if needed on smaller screens */
+  margin: 0 auto;
+}
+
+.premium-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Set max width for each card */
+  text-align: left;
+  transition: transform 0.3s ease-in-out; /* Smooth transform on hover */
+}
+
+/* Card Heading Styling */
+.premium-card h1 {
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Card Price Styling */
+.premium-card p {
+  font-size: 1.3em;
+  color: #5c9d48; /* Price color for a fresh and healthy look */
+  margin-bottom: 15px;
+}
+
+/* List Styling inside Premium Card */
+.premium-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.premium-card li {
+  font-size: 1em;
+  color: #5e6e59; /* List item color */
+  margin-bottom: 12px;
+}
+
+/* CTA Button Styling */
+.premium-card .cta-btn {
+  display: inline-block;
+  background-color: #ccf092;
+  color: #8c8484;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  width: 100%; /* Full width on mobile */
+  font-size: 1.1em;
+  margin-top: 15px;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.premium-card .cta-btn:hover {
+  background-color: #b6e28b; /* Slightly darker on hover */
+  transform: translateY(-5px); /* Elevate the button on hover */
+}
+
+/* Hover effect for Premium Card */
+.premium-card:hover {
+  transform: translateY(-10px); /* Lift the card on hover */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .premium-card-container {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+    gap: 20px; /* Smaller gap between the cards */
+  }
+
+  .premium-card {
+    width: 90%; /* Ensure cards take up more space on smaller screens */
+  }
+
+  .premium-card h1 {
+    font-size: 1.6em;
+  }
+
+  .premium-card p {
+    font-size: 1.2em;
+  }
+
+  .premium-card li {
+    font-size: 1em;
+  }
+}
+
 @media (max-width: 480px) {
+  .premium-card {
+    width: 100%; /* Full width for small screens */
+  }
+
+  .premium-card h1 {
+    font-size: 1.5em;
+  }
+
+  .premium-card p {
+    font-size: 1.1em;
+  }
+
+  .premium-card li {
+    font-size: 0.9em;
+  }
+
+  .premium-card .cta-btn {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .premium-card {
+    width: 90%; /* Ensure cards take up more space on smaller screens */
+    margin: 15px auto; /* Adjust margin */
+  }
+
+  .premium-card h1 {
+    font-size: 1.6em;
+  }
+
+  .premium-card p {
+    font-size: 1.2em;
+  }
+
+  .premium-card li {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-card {
+    width: 100%; /* Full width for small screens */
+  }
+
+  .premium-card h1 {
+    font-size: 1.5em;
+  }
+
+  .premium-card p {
+    font-size: 1.1em;
+  }
+
+  .premium-card li {
+    font-size: 0.9em;
+  }
+
+  .premium-card .cta-btn {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+  .service-cards,
+  .class-cards,
+  .plan-cards,
+  .location-cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure each card is sized and spaced for horizontal scrolling */
+  .service-cards .service-card,
+  .class-cards .class-card,
+  .plan-cards .plan-card,
+  .location-cards .location-card {
+    flex: 0 0 80%;
+    margin-right: 1rem;
+  }
+  /* Remove right margin on last card in each row */
+  .service-cards .service-card:last-child,
+  .class-cards .class-card:last-child,
+  .plan-cards .plan-card:last-child,
+  .location-cards .location-card:last-child {
+    margin-right: 0;
+  }
+
+  /* Scale down font size and padding inside cards */
+  .service-card,
+  .class-card,
+  .plan-card,
+  .location-card {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  /* Resize images inside cards, maintain aspect ratio */
+  .service-card img,
+  .class-card img,
+  .plan-card img,
+  .location-card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+  }
+
+  /* Shrink buttons and their padding */
+  .service-card button,
+  .class-card button,
+  .plan-card button,
+  .location-card button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Responsive styles for header and hero */
+@media (max-width: 768px) {
+  /* Header */
   #header {
     flex-direction: column;
     height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #header .logo img {
+    width: 80px;
     padding: 10px;
   }
 
@@ -663,42 +893,96 @@ footer {
     flex-direction: column;
     gap: 10px;
     margin-left: 0;
+    margin-top: 10px;
   }
 
+  #header nav ul li a {
+    font-size: 1em;
+    padding: 8px;
+  }
+
+  /* Hero section */
   .hero {
-    height: auto;
-    padding: 20px 10px;
+    height: 400px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 0;
+  }
+
+  .hero-content {
+    left: 10px;
+    right: 10px;
+    max-width: 100%;
     text-align: center;
   }
 
   .hero-content h1 {
-    font-size: 2em;
+    font-size: 6vw;
   }
 
   .hero-content p {
+    font-size: 3.5vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 7vw;
+  }
+
+  .hero-content p {
+    font-size: 4vw;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .premium-card-container {
+    flex-direction: column; /* Stack the cards vertically on smaller screens */
+    gap: 20px; /* Smaller gap between the cards */
+  }
+
+  .premium-card {
+    width: 90%; /* Ensure cards take up more space on smaller screens */
+  }
+
+  .premium-card h1 {
+    font-size: 1.6em;
+  }
+
+  .premium-card p {
+    font-size: 1.2em;
+  }
+
+  .premium-card li {
     font-size: 1em;
   }
+}
 
-  .class-cards {
-    grid-template-columns: 1fr;
+@media (max-width: 480px) {
+  .premium-card {
+    width: 100%; /* Full width for small screens */
   }
 
-  .plan-card, .location-card {
-    width: 100%;
-    max-width: 100%;
+  .premium-card h1 {
+    font-size: 1.5em;
   }
 
-  .service-card {
-    width: 100%;
+  .premium-card p {
+    font-size: 1.1em;
   }
 
-  .plan-cards {
-    flex-direction: column;
-    align-items: center;
+  .premium-card li {
+    font-size: 0.9em;
   }
 
-  .location-cards {
-    flex-direction: column;
-    align-items: center;
+  .premium-card .cta-btn {
+    font-size: 1em;
+    padding: 10px 15px;
   }
 }
