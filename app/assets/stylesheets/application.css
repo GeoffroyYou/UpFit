@@ -84,11 +84,13 @@ ul {
 .hero-content h1 {
   font-size: 3vw;
   margin-bottom: 20px;
+  color:#ccf092;
 }
 
 .hero-content p {
   font-size: 1.2vw;
   margin-bottom: 30px;
+  color:#ccf092;
 }
 
 
@@ -719,119 +721,116 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .premium-card-container {
-    flex-direction: column;
-    gap: 20px;
+/* ========== Responsive Design ========== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 4vw;
   }
 
-  .premium-card {
-    width: 90%;
+  .hero-content p {
+    font-size: 1.8vw;
   }
-}
-
-
-
-
-@media (max-width: 600px) {
 
   .service-cards,
-  .class-cards,
   .plan-cards,
-  .location-cards {
+  .location-cards,
+  .class-cards {
+    flex-direction: column;
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    align-items: center;
   }
 
-  /* Ensure each card is sized and spaced for horizontal scrolling */
-  .service-cards .service-card,
-  .class-cards .class-card,
-  .plan-cards .plan-card,
-  .location-cards .location-card {
-    flex: 0 0 80%;
-    margin-right: 1rem;
-  }
-  /* Remove right margin on last card in each row */
-  .service-cards .service-card:last-child,
-  .class-cards .class-card:last-child,
-  .plan-cards .plan-card:last-child,
-  .location-cards .location-card:last-child {
-    margin-right: 0;
+  #header nav ul {
+    gap: 10px;
   }
 
-  /* Scale down font size and padding inside cards */
-  .service-card,
-  .class-card,
-  .plan-card,
-  .location-card {
-    font-size: 0.9rem;
-    padding: 0.75rem;
-  }
-
-  /* Resize images inside cards, maintain aspect ratio */
-  .service-card img,
-  .class-card img,
-  .plan-card img,
-  .location-card img {
-    width: 100%;
-    height: auto;
-    max-height: 150px;
-    object-fit: cover;
-  }
-
-  /* Shrink buttons and their padding */
-  .service-card button,
-  .class-card button,
-  .plan-card button,
-  .location-card button {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+  .plan-cards {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Responsive styles for header and hero */
+/* Mobile (≤768px) */
 @media (max-width: 768px) {
-  /* Header */
   #header {
     flex-direction: column;
     height: auto;
-    padding: 10px;
-    text-align: center;
-  }
-
-  #header .logo img {
-    width: 80px;
     padding: 10px;
   }
 
   #header nav ul {
     flex-direction: column;
-    gap: 10px;
-    margin-left: 0;
-    margin-top: 10px;
+    align-items: center;
+    margin: 10px 0;
   }
 
-  #header nav ul li a {
-    font-size: 1em;
-    padding: 8px;
-  }
-
-  /* Hero section */
   .hero {
     height: 400px;
-    width: 100%;
-    margin: 10px 0;
-    border-radius: 0;
+  }
+
+  .hero-content h1 {
+    font-size: 5vw;
+  }
+
+  .hero-content p {
+    font-size: 2.5vw;
+  }
+
+  .service-cards,
+  .plan-cards,
+  .location-cards,
+  .class-cards {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
+
+  .service-card,
+  .plan-card,
+  .location-card,
+  .class-card {
+    width: 90%;
+  }
+
+  .plan-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .class-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .plan-card h3 {
+    font-size: 1.4em;
+  }
+
+  .plan-card p {
+    font-size: 1em;
+  }
+
+  #servicos h2,
+  #planos h2,
+  #localizacoes h2,
+  #aulas-treinos h2 {
+    font-size: 1.4em;
+  }
+}
+
+/* Extra small screens (≤480px) */
+@media (max-width: 480px) {
+  .hero {
+    height: 300px;
   }
 
   .hero-content {
     left: 10px;
-    right: 10px;
-    max-width: 100%;
-    text-align: center;
+    max-width: 90%;
   }
 
   .hero-content h1 {
@@ -839,68 +838,24 @@ footer {
   }
 
   .hero-content p {
-    font-size: 3.5vw;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 300px;
+    font-size: 3vw;
   }
 
-  .hero-content h1 {
-    font-size: 7vw;
+  .plan-card h3,
+  .class-card h3 {
+    font-size: 1.1rem;
   }
 
-  .hero-content p {
-    font-size: 4vw;
-  }
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .premium-card-container {
-    flex-direction: column; /* Stack the cards vertically on smaller screens */
-    gap: 20px; /* Smaller gap between the cards */
+  .plan-card p,
+  .class-card p {
+    font-size: 0.9rem;
   }
 
-  .premium-card {
-    width: 90%; /* Ensure cards take up more space on smaller screens */
+  .class-card img {
+    height: 160px;
   }
 
-  .premium-card h1 {
-    font-size: 1.6em;
-  }
-
-  .premium-card p {
-    font-size: 1.2em;
-  }
-
-  .premium-card li {
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 480px) {
-  .premium-card {
-    width: 100%; /* Full width for small screens */
-  }
-
-  .premium-card h1 {
-    font-size: 1.5em;
-  }
-
-  .premium-card p {
-    font-size: 1.1em;
-  }
-
-  .premium-card li {
-    font-size: 0.9em;
-  }
-
-  .premium-card .cta-btn {
-    font-size: 1em;
-    padding: 10px 15px;
+  .class-card .card-title {
+    font-size: 1rem;
   }
 }
